@@ -11,6 +11,7 @@ all the ascii dice
 */
 
 public class Dice {
+
     private ArrayList diceFaces = new ArrayList<String>(){
         {
             add("+-----+|     ||  0  ||     |+-----+");
@@ -23,14 +24,14 @@ public class Dice {
         }
     };
 
-    void rollDice (){
+    int rollDice (){
         Random ran = new Random();
         int rollOne = ran.nextInt(6);
         int rollTwo = ran.nextInt(6);
-
-        System.out.println(rollOne +"   "+ rollTwo);
+        int returnTotal = rollOne + rollTwo;
 
         System.out.println(addedDice((String)diceFaces.get(rollOne), (String)diceFaces.get(rollTwo)));
+        return returnTotal;
     }
 
     // put the dice on the same line (this is purely for astetics)
